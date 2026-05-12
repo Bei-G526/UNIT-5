@@ -1,6 +1,8 @@
 
 void pause(){
-  
+    theme.pause();
+    fill(0);
+    text("PAUSE", width/2, height/2);
 }
 
 void pauseClicks(){

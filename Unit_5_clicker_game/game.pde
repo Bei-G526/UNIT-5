@@ -1,7 +1,7 @@
 
 void game() {
   background(0, 255, 0);
-
+ theme.play();
   fill(0);
   text("Score:" + score, width/2, 50);
   text("Lives:" +lives, width/2, 120);
@@ -9,6 +9,7 @@ void game() {
   strokeWeight(5);
   fill(255);
   ellipse(x, y, 100, 100);
+  
   // pause button
   stroke(0);
   fill(255);

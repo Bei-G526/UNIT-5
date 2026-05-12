@@ -13,6 +13,7 @@ final int INTRO = 0;
 final int GAME = 1;
 final int PAUSE =2 ;
 final int GAMEOVER =3 ;
+final int OPTION = 4; 
 // TARGET VARIABLE --------------------------------------------------
 float x, y,d;
 int score, lives;
@@ -61,7 +62,9 @@ void draw() {
     pause();
   } else if (mode== GAMEOVER) {
     gameover();
+  } else if (mode == OPTION) {
+    option();
   } else {
     println("Error:Mode =" +mode);
-  }
+  } 
 }

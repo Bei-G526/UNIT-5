@@ -4,19 +4,24 @@ void intro(){
  
   background(255,247,3);
   fill(255);
-  rect(400,500,200,100);
+  rect(200,550,250,100);
+  rect(600,550,250,100);
   textSize(80);
   fill(0);
   stroke(0);
   strokeWeight(6);
-  text("CLICKER GAME",400,320);
+  text("CLICKER GAME",width/2,300);
   textSize(60);
-  text("Start",400,500);
+  text("START",200,550);
+  text("OPTIONS",600,550);
   
 }
 
 void introClicks(){
- if (mouseX>300 && mouseX<500 && mouseY >450 && mouseY<550){
+ if (mouseX>75 && mouseX<325 && mouseY >500 && mouseY<600){
    mode=GAME;
 }
+ if (mouseX> 475 && mouseX<725 && mouseY > 500 && mouseY< 600){
+   mode = OPTION;
+ }
 }
