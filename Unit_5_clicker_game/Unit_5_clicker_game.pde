@@ -14,9 +14,10 @@ final int GAME = 1;
 final int PAUSE =2 ;
 final int GAMEOVER =3 ;
 final int OPTION = 4; 
+final int HIGHSCORE = 5; 
 // TARGET VARIABLE --------------------------------------------------
 float x, y,d;
-int score, lives;
+int score, lives, highscore;
 //BOUNCING
 //float x,y,d;
 float vx,vy;
@@ -24,6 +25,7 @@ float vx,vy;
 // sound variables 
 Minim minim; 
 AudioPlayer theme, success, failure;
+
 
 //COLOR PALLETTE ---------------------------------
 
@@ -51,6 +53,10 @@ void setup() {
   theme = minim.loadFile("MUSIC.mp3");
  success = minim.loadFile("SUCCESS.wav");
  failure = minim.loadFile("FAILURE.wav");
+ 
+ //word font 
+ PFont myFont = loadFont("Castellar-48.vlw");
+ textFont(myFont);
 }
 
 void draw() {

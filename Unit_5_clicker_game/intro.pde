@@ -2,28 +2,28 @@
 void intro(){
   theme.play();
  
-  background(255,247,3);
+  background(255,231,209);
   fill(255);
-  tactileRect (200,550,250,100);
-  rect(200,550,250,100);
-  tactileRect(600,550,250,100);
-  rect(600,550,250,100);
+  tactileRect (200,550,270,100);
+  rect(200,550,270,100);
+  tactileRect(600,550,270,100);
+  rect(600,550,270,100);
   textSize(80);
   fill(0);
   stroke(0);
   strokeWeight(6);
   text("CLICKER GAME",width/2,300);
-  textSize(60);
+  textSize(50);
   text("START",200,550);
   text("OPTIONS",600,550);
   
 }
 
 void introClicks(){
- if (mouseX>75 && mouseX<325 && mouseY >500 && mouseY<600){
+ if (mouseX>65 && mouseX<335 && mouseY >500 && mouseY<600){
    mode=GAME;
 }
- if (mouseX> 475 && mouseX<725 && mouseY > 500 && mouseY< 600){
+ if (mouseX> 465 && mouseX<735 && mouseY > 500 && mouseY< 600){
    mode = OPTION;
  }
 }
