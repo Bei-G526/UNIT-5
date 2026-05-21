@@ -35,6 +35,8 @@ void setup(){
   ballx = width/2; 
   bally = height/2;
   balld = 100;
+  vx = random(-3,3);
+  vy = random(-3,3);
   
   // initalize keyboards 
   wkey = skey = upkey = downkey =false; 
