@@ -11,6 +11,7 @@ final int GAMEOVER = 4;
 float leftx,lefty,leftd,rightx,righty, rightd; // paddles
 float ballx,bally, balld;//balls 
 float vx,vy;
+boolean AI; 
 
 // scoring 
 int leftscore,rightscore,timer; 
@@ -20,7 +21,7 @@ boolean wkey,skey,upkey,downkey;
 
 void setup(){
   size (800,600);
-  mode = GAME;
+  mode = INTRO;
   
   //initalize paddles
   leftx = 0;
@@ -37,6 +38,10 @@ void setup(){
   balld = 100;
   vx = random(-3,3);
   vy = random(-3,3);
+  
+  //initialize score 
+  rightscore = leftscore = 0 ; 
+  timer = 100;
   
   // initalize keyboards 
   wkey = skey = upkey = downkey =false; 
