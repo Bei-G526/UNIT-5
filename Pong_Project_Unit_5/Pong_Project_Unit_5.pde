@@ -1,4 +1,10 @@
 //Pong 
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
 
 // mode framework
 int mode;
@@ -18,6 +24,9 @@ int leftscore,rightscore,timer;
 // keyboard variables 
 boolean wkey,skey,upkey,downkey;
 
+// sound variables 
+Minim minim; 
+AudioPlayer theme, success, failure;
 
 void setup(){
   size (800,600);
@@ -45,6 +54,13 @@ void setup(){
   
   // initalize keyboards 
   wkey = skey = upkey = downkey =false; 
+  
+   // minim 
+  minim = new Minim(this);
+  theme = minim.loadFile("MUSIC.mp3");
+ success = minim.loadFile("SUCCESS.wav");
+ failure = minim.loadFile("FAILURE.wav");
+ 
 }
 
 

@@ -1,4 +1,6 @@
 void intro () {
+  theme.play();
+  
   background(255,231,209);
   fill(255);
   tactileRect(100,350,250,125);
