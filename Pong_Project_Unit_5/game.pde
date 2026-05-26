@@ -9,11 +9,11 @@ void game () {
   textSize(50);
   fill(255, 0, 0);
   text(leftscore, width/4, 100);
-  text(timer, width/4, 500);
+  //text(timer, width/4, 500);
   timer = timer - 1 ;
   fill(0, 255, 0);
   text(rightscore, 3*width/4, 100);
-  text(timer, 3*width/4, 500);
+ // text(timer, 3*width/4, 500);
   timer = timer - 1;
 
   //draw paddles
