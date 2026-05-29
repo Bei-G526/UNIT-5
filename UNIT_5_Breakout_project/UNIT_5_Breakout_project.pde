@@ -17,7 +17,7 @@ final int PAUSE = 3;
 final int GAMEOVER = 4 ;
 
 // entity variables
-float bottomx, bottomy, bottomd; // paddles
+float paddlex, paddley, paddled; // paddles
 float ballx, bally, balld;//balls
 float vx, vy;
 //boolean AI;
@@ -31,24 +31,16 @@ void setup() {
   mode = GAME;
 
   //initalize paddles
-  bottomx = width/2;
-  bottomy = height;
-  bottomd = 200;
-
-  // rightx = width;
-  //righty = height/2;
-  // rightd = 200;
+  paddlex = width/2;
+  paddley = height;
+  paddled = 200;
 
   // initalize ball
   ballx = width/2;
   bally = height/2;
   balld = 15;
-  vx = random(-3, 3);
-  vy = random(-3, 3);
-
-  //initialize score
-  // rightscore = leftscore = 0 ;
-  //timer = 100;
+  vx = random(-3, 4);
+  vy = random(-3, 4);
 
   // initalize keyboards
   wkey = skey =true;
