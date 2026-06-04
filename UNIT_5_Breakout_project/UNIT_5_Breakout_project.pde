@@ -25,26 +25,48 @@ float vx, vy;
 //keyboard variables
 boolean wkey, skey;
 
+//brick variables 
+int [] x; // declaration
+int [] y; 
+boolean[] alive;
+int brickd; 
+int n;
+int tempx , tempy ; 
 
 void setup() {
-  size (700, 800);
-  mode = GAME;
+  size (800, 800);
+  mode = GAME ;
 
   //initalize paddles
   paddlex = width/2;
   paddley = height;
-  paddled = 200;
+  paddled = 100;
 
   // initalize ball
   ballx = width/2;
-  bally = height/2;
-  balld = 15;
-  vx = random(-3, 4);
-  vy = random(-3, 4);
-
-  // initalize keyboards
-  wkey = skey =true;
-
+  bally = height-200;
+  balld = 10;
+  vx = 0;
+  vy = 1;
+  
+  // set up array of bricks 
+  brickd = 50;
+  n = 20; 
+  x = new int [n]; // instantiation
+  y = new int [n];
+  tempx = 100; 
+  tempy = 100;
+  int i = 0;
+  while (i<n) {
+    x[i]= tempx;
+    y[i] = tempy;
+    tempx = tempx +150;
+    if (tempx > width) {
+      tempx = 100;
+      tempy = tempy +100;
+    }
+    i=i+1; 
+  }
   // minim
   minim = new Minim(this);
   theme = minim.loadFile("MUSIC.mp3");
