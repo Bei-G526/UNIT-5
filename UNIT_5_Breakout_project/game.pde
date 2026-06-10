@@ -1,21 +1,19 @@
 void game () {
   background(0);
 
-  // bricks ----------------------------
-  // circle (x[0],y[0],brickd);
-  //  circle (x[1],y[1],brickd);
-  // circle (x[2],y[2],brickd);
 
+  fill(255);
+  textSize (40);
+  text ( "Score:" + score, 80, 770);
+  text ("Lives:" + lives, 590, 770);
+  // bricks ----------------------------
   int i = 0;
   while (i<n) {
-    circle (x[i], y[i], brickd);
-    if (dist(ballx, bally, x[i], y[i]) < balld/2 + brickd/2) {
-      vx = (ballx-x[i])/10;
-      vy = (bally-y[i])/10;
+    if (alive [i] == true) {
+      manageBrick(i) ;
     }
-    i=i+1;
+    i++;
   }
-
 
   //draw paddles
   fill(255);
@@ -35,18 +33,43 @@ void game () {
   if (ballx < balld/2 || ballx > width-balld/2) {
     vx = vx* -1;
   }
-  if (bally < balld/2 || bally > height-balld/2) {
+  if (bally < balld/2) {
     vy = vy *-1;
   }
+
+  if (bally > height) {
+    lives = lives - 1;
+    failure.play();
+    ballx = width/2;
+    bally = height/2+50;
+    if (lives == 0 ) mode = GAMEOVER;
+  }
+
   if (dist(ballx, bally, paddlex, paddley) < balld/2 + paddled/2) {
     vx = (ballx-paddlex)/10;
     vy = (bally-paddley)/10;
   }
-  if (bally>815) {
-    ballx = width/2;
-    bally = height/2;
-  }
+
+  if (score == 20) mode = GAMEOVER;
 }
 
 void gameClicks() {
+  mode = PAUSE;
+}
+
+void manageBrick (int i) {
+  if (y[i] == 100) fill (red);
+  if (y[i] == 200) fill (orange);
+  if (y[i] == 300) fill (yellow);
+  if (y[i] == 400) fill (green);
+  circle (x[i], y[i], brickd);
+  if (dist(ballx, bally, x[i], y[i]) < balld/2 + brickd/2) {
+    score = score + 1;
+    vx = (ballx-x[i])/10;
+    vy = (bally-y[i])/10;
+    alive[i] = false;
+    success.rewind();
+    success.play();
+ 
+  }
 }
