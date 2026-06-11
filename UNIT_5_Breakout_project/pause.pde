@@ -4,7 +4,7 @@ void pause () {
   //modulus of mod
   f=f+1;
   if (f == numberOfFrames) f=0;
-  fill(255);
+  fill(250,211,15);
   textSize(90);
   text("PAUSE!", 230, 450);
 }

@@ -10,7 +10,7 @@ void intro () {
   f=f+1;
   if (f == numberOfFrames) f=0;
 
-  fill(255);
+  fill(18,81,250);
   textSize(90);
   text("BREAKOUT", 120, 450);
 }

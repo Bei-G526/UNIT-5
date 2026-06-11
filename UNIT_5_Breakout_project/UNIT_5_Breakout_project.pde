@@ -21,7 +21,6 @@ float paddlex, paddley, paddled; // paddles
 float ballx, bally, balld;//balls
 float vx, vy;
 int score ,  lives ; 
-//boolean AI;
 
 //keyboard variables
 boolean wkey, skey;

@@ -2,7 +2,7 @@ void game () {
   background(0);
 
 
-  fill(255);
+  fill(128,15,250);
   textSize (40);
   text ( "Score:" + score, 80, 770);
   text ("Lives:" + lives, 590, 770);
@@ -19,9 +19,11 @@ void game () {
   fill(255);
   circle(paddlex, paddley, paddled);
   //move paddles
+
   if (wkey) paddlex = paddlex -5 ;
   if (skey) paddlex = paddlex+5;
-
+  
+  
   //draw balls
   fill(255);
   circle(ballx, bally, balld);
@@ -50,7 +52,7 @@ void game () {
     vy = (bally-paddley)/10;
   }
 
-  if (score == 20) mode = GAMEOVER;
+  if (score == 1) mode = GAMEOVER;
 }
 
 void gameClicks() {
